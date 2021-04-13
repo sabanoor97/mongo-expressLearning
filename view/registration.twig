@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title> {{banquet}} </title>
+</head>
+
+<body>
+    <h1>{{banquet}}</h1>
+    <p>{{location}}</p>
+
+    <form method="POST" action="/form_data">
+        Email: <input type="text" name="email" value="{{user.email}}" ><br>
+
+        {% if (error.email) %}
+        <p> {{error.email.msg}} </p>
+        {% endif %}
+
+
+        Password: <input type="text" name="password" value="{{user.password}}" ><br>          
+        
+        {% if (error.password) %}
+        <p> {{error.password.msg}} </p>
+        {% endif %}
+        
+        Confirm Password: <input type=" text" name="c_password" value="{{user.c_password}}"><br>
+        
+        {% if (error.c_password) %}
+        <p> {{error.c_password.msg}} </p>
+        {% endif %}
+        
+        <input type="submit" name="submit" value="submit">
+    </form>
+</body>
+
+</html>
